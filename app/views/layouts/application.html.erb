@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path,
+      </li>
     <%= yield %>
   </body>
 </html>
