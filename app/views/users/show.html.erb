@@ -1,11 +1,27 @@
 <!--ユーザーの詳細-->
-<div>
-  <h3><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image(100, 100) %>
-  <% if @user == current_user %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-1">
+      <table class="table">
+        <tr>
+          <td class="align-middle">
+            <%= image_tag @user.get_profile_image(100, 100) %>
+          </td>
+          <td class="align-middle">
+            <h3><%= @user.name %></h3>
+          </td>
+          <td class="align-middle">
+            <% if @user == current_user %>
+              <%= link_to "プロフィール編集", edit_user_path(@user) %>
+            <% end %>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
 </div>
+
 
 <!--ユーザーの投稿一覧-->
 
